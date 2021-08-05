@@ -44,9 +44,11 @@ public class CivilTransport extends AirTransport {
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("Civil transport:").append("\n");
         stringBuilder.append(super.toString());
         stringBuilder.append("7. Count passengers: ").append(countPassengers).append("\n");
-        stringBuilder.append("8. VIP: ").append(vip);
+        stringBuilder.append("8. VIP: ").append(vip).append("\n");
+        stringBuilder.append("9. Power K/B: ").append(super.convertPower());
         return stringBuilder.toString();
     }
 }

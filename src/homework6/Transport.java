@@ -14,6 +14,13 @@ public class Transport {
         this.brands = brands;
     }
 
+    public Double convertPower() {
+        if (power == null) {
+            return null;
+        }
+        return power * 0.74;
+    }
+
     public Double getPower() {
         return power;
     }

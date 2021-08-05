@@ -22,9 +22,9 @@ public class CargoTransport extends LandTransport {
         this.lifting = lifting;
     }
 
-    public void weightFull(Double weight) {
-        if (weight <= super.getWeight()) {
-            System.out.println("”Грузовик загружен");
+    public void liftingFull(Double lifting) {
+        if (lifting <= this.lifting) {
+            System.out.println("Грузовик загружен");
         } else {
             System.out.println("Вам нужен грузовик побольше");
         }
@@ -33,8 +33,10 @@ public class CargoTransport extends LandTransport {
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("Cargo transport:").append("\n");
         stringBuilder.append(super.toString());
-        stringBuilder.append("7. Lifting: ").append(lifting);
+        stringBuilder.append("7. Lifting: ").append(lifting).append("\n");
+        stringBuilder.append("8. Power K/B: ").append(super.convertPower());
         return stringBuilder.toString();
     }
 }

@@ -64,6 +64,7 @@ public class Computer {
             resource = 0; //и устанавливаем значение кол-во циклов работы 0 , т.е. компбьютер больше не работает
             return false;
         }
+        resource--;
         return true;
     }
 

@@ -53,9 +53,11 @@ public class MilitaryTransport extends AirTransport {
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("Military transport:").append("\n");
         stringBuilder.append(super.toString());
         stringBuilder.append("7. Catapulta system: ").append(catapultaSystem).append("\n");
-        stringBuilder.append("8. Count weapon: ").append(countWeapon);
+        stringBuilder.append("8. Count weapon: ").append(countWeapon).append("\n");
+        stringBuilder.append("9. Power K/B: ").append(super.convertPower());
         return stringBuilder.toString();
     }
 }

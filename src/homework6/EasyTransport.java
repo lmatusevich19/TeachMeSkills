@@ -1,5 +1,7 @@
 package homework6;
 
+import java.text.DecimalFormat;
+
 public class EasyTransport extends LandTransport {
     private BodyCar bodyCar;
     private Integer countPassengers;
@@ -33,14 +35,6 @@ public class EasyTransport extends LandTransport {
         this.countPassengers = countPassengers;
     }
 
-    public Double getPowerKB() {
-        Double tmpPower = super.getPower();
-        if (tmpPower == null) {
-            return null;
-        }
-        return tmpPower * 0.74;
-    }
-
     public void way(Double hours) {
         Double maxSpeed = super.getMaxSpeed();
         Double fuel = super.getFuel();
@@ -48,7 +42,8 @@ public class EasyTransport extends LandTransport {
             Double way = hours * maxSpeed;
             System.out.println("За время " + hours + " ч, автомобиль " + super.getBrands() +
                     " двигаясь  с максимальной скоростью " + maxSpeed + " км/ч " +
-                    " проедет " + way + " км и израсходует " + getCountFuel(fuel, way) + " литров топлива."
+                    " проедет " + way + " км и израсходует " +
+                    new DecimalFormat("#0.00").format(getCountFuel(fuel, way)) + " литров топлива."
             );
         }
     }
@@ -60,10 +55,11 @@ public class EasyTransport extends LandTransport {
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("Easy transport:").append("\n");
         stringBuilder.append(super.toString());
         stringBuilder.append("7. Body car: ").append(bodyCar).append("\n");
         stringBuilder.append("8. Count Passengers: ").append(countPassengers).append("\n");
-        stringBuilder.append("9. Power K/B: ").append(getPowerKB());
+        stringBuilder.append("9. Power K/B: ").append(super.convertPower());
         return stringBuilder.toString();
     }
 }
